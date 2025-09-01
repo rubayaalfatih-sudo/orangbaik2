@@ -1,0 +1,104 @@
+/* --- Global Style --- */
+body {
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background: linear-gradient(135deg, #FFF0F5 0%, #FFE4E1 100%); /* Gradien Pink Lembut */
+  text-align: center;
+}
+
+/* --- Card Style --- */
+.card {
+  background-color: rgba(255, 255, 255, 0.7); /* Efek Kaca Transparan */
+  backdrop-filter: blur(10px);
+  padding: 30px 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 500px;
+  box-sizing: border-box;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.special-question {
+  font-family: 'Great Vibes', cursive;
+  font-size: 3.5rem;
+  font-weight: normal;
+  color: #D9534F; /* Merah Mawar */
+  margin: 15px 0;
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.message {
+  font-size: 1.1rem;
+  color: #333;
+  line-height: 1.6;
+}
+
+.gif {
+  width: 100%;
+  max-width: 220px;
+  height: auto;
+  border-radius: 15px;
+  margin: 20px 0;
+}
+
+/* --- Buttons Style --- */
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+button {
+  padding: 12px 28px;
+  border: none;
+  border-radius: 50px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease; /* Transisi halus untuk semua efek */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+#yes-btn {
+  background: linear-gradient(45deg, #FF6B6B, #FF8E8E); /* Gradien Merah Muda Cerah */
+  color: white;
+}
+
+#yes-btn:hover {
+  transform: translateY(-3px) scale(1.05); /* Sedikit terangkat saat disentuh */
+  box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+}
+
+#no-btn {
+  background-color: #f0f0f0;
+  color: #555;
+  border: 1px solid #ddd;
+}
+
+.is-running {
+  position: absolute;
+  transform: scale(0.7); /* Tombol akan mengecil saat kabur */
+}
+
+/* --- Responsiveness for Mobile --- */
+@media (max-width: 600px) {
+  .card { padding: 25px 30px; }
+  .special-question { font-size: 2.8rem; }
+  .message { font-size: 1rem; }
+  button { padding: 10px 22px; font-size: 0.9rem; }
+  .buttons { flex-direction: column; gap: 10px; } /* Tombol jadi vertikal di HP */
+}
