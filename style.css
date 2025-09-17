@@ -6,30 +6,41 @@ body {
   align-items: center;
   min-height: 100vh;
   margin: 0;
-  background: linear-gradient(135deg, #FFF0F5 0%, #FFE4E1 100%); /* Gradien Pink Lembut */
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
   text-align: center;
+  overflow: hidden;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 /* --- Card Style --- */
 .card {
-  background-color: rgba(255, 255, 255, 0.7); /* Efek Kaca Transparan */
-  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(15px);
   padding: 30px 40px;
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 25px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
   width: 90%;
   max-width: 500px;
   box-sizing: border-box;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
+  z-index: 10;
 }
 
 .special-question {
   font-family: 'Great Vibes', cursive;
-  font-size: 3.5rem;
+  font-size: 3.8rem;
   font-weight: normal;
-  color: #D9534F; /* Merah Mawar */
+  color: #e73c7e;
   margin: 15px 0;
   line-height: 1.2;
+  text-shadow: 1px 1px 5px rgba(0,0,0,0.1);
 }
 
 h2 {
@@ -42,7 +53,7 @@ h2 {
 .message {
   font-size: 1.1rem;
   color: #333;
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
 .gif {
@@ -51,6 +62,7 @@ h2 {
   height: auto;
   border-radius: 15px;
   margin: 20px 0;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
 /* --- Buttons Style --- */
@@ -69,18 +81,18 @@ button {
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s ease; /* Transisi halus untuk semua efek */
+  transition: all 0.3s ease;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 #yes-btn {
-  background: linear-gradient(45deg, #FF6B6B, #FF8E8E); /* Gradien Merah Muda Cerah */
+  background: linear-gradient(45deg, #ff4757, #ff6b81);
   color: white;
 }
 
 #yes-btn:hover {
-  transform: translateY(-3px) scale(1.05); /* Sedikit terangkat saat disentuh */
-  box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+  transform: translateY(-5px) scale(1.1);
+  box-shadow: 0 8px 25px rgba(255, 71, 87, 0.5);
 }
 
 #no-btn {
@@ -91,7 +103,47 @@ button {
 
 .is-running {
   position: absolute;
-  transform: scale(0.7); /* Tombol akan mengecil saat kabur */
+  transform: scale(0.7);
+  transition: all 0.2s ease;
+}
+
+/* --- Animasi Hati Berjatuhan --- */
+.hearts-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.heart {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: #ff4757;
+  opacity: 0.7;
+  transform: rotate(-45deg);
+  animation: fall 10s linear infinite;
+}
+
+.heart::before,
+.heart::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: #ff4757;
+  border-radius: 50%;
+}
+
+.heart::before { top: -10px; left: 0; }
+.heart::after { top: 0; left: 10px; }
+
+@keyframes fall {
+  0% { top: -10%; opacity: 1; }
+  100% { top: 110%; opacity: 0; }
 }
 
 /* --- Responsiveness for Mobile --- */
@@ -100,5 +152,5 @@ button {
   .special-question { font-size: 2.8rem; }
   .message { font-size: 1rem; }
   button { padding: 10px 22px; font-size: 0.9rem; }
-  .buttons { flex-direction: column; gap: 10px; } /* Tombol jadi vertikal di HP */
+  .buttons { flex-direction: column; gap: 10px; }
 }
