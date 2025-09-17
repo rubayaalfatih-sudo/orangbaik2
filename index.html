@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sebuah Pertanyaan Untukmu...</title>
+  <title>A Question For You...</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,22 +13,29 @@
 </head>
 <body>
 
+  <div class="hearts-container"></div>
+
   <div class="card" id="question-card">
-    <h2>Aku cuma mau bilang sesuatu...</h2>
-    <img src="https://media.tenor.com/ykO-9BGJFDsAAAAi/bubududu-panda.gif" alt="Bunga Mekar" class="gif">
+    <h2>I wanted to ask you something...</h2>
+    <img src="https://media.tenor.com/ykO-9BGJFDsAAAAi/bubududu-panda.gif" alt="Cute Panda with a flower" class="gif">
     <h1 class="special-question">Will you be mine?</h1>
-    <p class="message">Sejak kenal kamu, semuanya jadi lebih berwarna. Aku suka cara kamu tertawa, cara kamu melihat dunia... dan sejujurnya, aku suka kamu.</p>
+    <p class="message">Ever since I met you, my world has been brighter. I love your laugh, the way you see things... and honestly, I've completely fallen for you.</p>
     <div class="buttons">
-      <button id="yes-btn">Yes, I will!</button>
-      <button id="no-btn">Cuma temenan aja</button>
+      <button id="yes-btn">💖 Yes, I will! 💖</button>
+      <button id="no-btn">Just friends</button>
     </div>
   </div>
 
   <div class="card" id="result-card" style="display: none;">
-    <h1 class="special-question">Yeay! I'm so happy!</h1>
-    <img src="https://media.tenor.com/kegMMjNnKkkAAAAi/bunny-cute.gif" alt="Pasangan Bahagia" class="gif">
-    <p class="message">Makasih udah terima aku.<br>Siap-siap buat petualangan baru kita ya!</p>
+    <h1 class="special-question">Yesss! I'm so happy!</h1>
+    <img src="https://media.tenor.com/kegMMjNnKkkAAAAi/bunny-cute.gif" alt="Happy couple gif" class="gif">
+    <p class="message">Thank you for making me the happiest person.<br>Get ready for our new adventure together!</p>
   </div>
+  
+  <audio id="background-music" loop>
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
 
   <script src="script.js"></script>
 </body>
